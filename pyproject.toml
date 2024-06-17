@@ -13,3 +13,6 @@ classifiers = [
 dynamic = ["version"]
 [tool.maturin]
 features = ["pyo3/extension-module"]
+
+[project.urls]
+repository = "https://github.com/AndersTrier/reed-solomon-leopard"
