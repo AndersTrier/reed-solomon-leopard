@@ -37,7 +37,7 @@ Usage
 import reed_solomon_leopard
 
 # Our data shards. Each shard must be of the same length as all the other
-# shards, and the length must be a multiple of 64.
+# shards, and the length must be a multiple of 2.
 original = [
     b"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ",
     b"eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut e",
