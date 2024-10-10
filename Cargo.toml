@@ -10,4 +10,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = "0.20.0"
-reed-solomon-simd = "2.2.1"
+reed-solomon-simd = "3.0"
