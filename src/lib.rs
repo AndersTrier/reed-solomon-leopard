@@ -56,7 +56,7 @@ fn encode<'py>(
             .map_err(Error::from)?;
     }
 
-    let encoder_result = encoder.encode().map_err(Error::from)?;
+    let encoder_result = py.allow_threads(|| encoder.encode()).map_err(Error::from)?;
 
     let mut recovery_shards: Vec<Bound<'_, PyBytes>> = Vec::with_capacity(recovery_count);
     recovery_shards.extend(encoder_result.recovery_iter().map(|s| PyBytes::new(py, s)));
@@ -113,7 +113,7 @@ fn decode<'py>(
     }
 
     // Decode
-    let decoder_result = decoder.decode().map_err(Error::from)?;
+    let decoder_result = py.allow_threads(|| decoder.decode()).map_err(Error::from)?;
 
     let py_dict = PyDict::new(py);
     for (idx, shard) in decoder_result.restored_original_iter() {
