@@ -10,5 +10,5 @@ name = "reed_solomon_leopard"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.20.0"
+pyo3 = "0.23.1"
 reed-solomon-simd = "3.0.1"
